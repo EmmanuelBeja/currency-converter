@@ -7,7 +7,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/convert', function(req,res){
-  console.log(req.body);
   console.log('converting...');
   controller.convert(req,res);
 });
