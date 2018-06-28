@@ -2,7 +2,7 @@ const https = require('https');
 let controller = {};
 
 controller.index = (req, res) => {
-  let amounts = '';//set message to undefined to avoid errors
+  let amount = '';//set message to undefined to avoid errors
   res.render('front/index', {amount: amount});
 }
 
@@ -58,10 +58,8 @@ controller.convert = (req, res) => {
     //    status: "Success",
     //    amount: amount
     //})
-    res.render('front/index', {
-        amounts: amount
-    });
-
+    res.render('front/index', {amount: amount});
+    //res.send('Result: '+amount);
   });
 }
 
