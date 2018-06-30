@@ -1,5 +1,5 @@
 
-let cacheName = 'currency-converter-static-v10';
+let cacheName = 'currency-converter-static-v9';
 
 // Default files to always cache
 let cacheFiles = [
@@ -48,6 +48,20 @@ self.addEventListener('activate', (event) => {
     })
   );
 });
+/*
+self.addEventListener('fetch', (event) => {
+  console.log('[ServiceWorker] Fetch', event.request.url)
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+*/
+
+
+
+
 
 //another way to fetch data
 self.addEventListener('fetch', (event) => {
@@ -68,6 +82,34 @@ self.addEventListener('fetch', (event) => {
         // Not in cache - return the result from the live server
         // `fetch` is essentially a "fallback"
         return fetch(event.request);
+
+        /*
+        else {
+          // If the request is NOT in the cache, fetch and cache
+
+  				let requestClone = event.request.clone();
+  				return fetch(requestClone).then((response) => {
+  						if ( !response ) {
+  							console.log("[ServiceWorker] No response from fetch ")
+  							return response;
+  						}
+  						let responseClone = response.clone();
+  						//  Open the cache
+  						caches.open(cacheName).then((cache) => {
+  							// Put the fetched response in the cache
+  							cache.put(event.request, responseClone);
+  							console.log('[ServiceWorker] New Data Cached', event.request.url);
+  							// Return the response
+  							return response;
+  				    }); // end caches.open
+
+  					}).catch((err) => {
+  						console.log('[ServiceWorker] Error Fetching & Caching New Data', err);
+              return err;
+  					});
+        }*/
+
+
 
 			}) // end caches.match(event.request)
 	); // end event.respondWith

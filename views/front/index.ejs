@@ -347,6 +347,7 @@
              <option value="ZMW">ZMW</option>
            </select>
          </div>
+         <br>
          <button type="submit" name="button" class="btn btn-success"><i class="fa fa-hand-point-up" style="color:white;"></i> Convert</button>
        </form>
       </div>
@@ -354,7 +355,7 @@
       <div class="col-md-8 offset-md-2 alert alert-success" role="alert">
         <h3>Result:</h3>
         <p>
-          <% if(amount.length > 0) { %>
+          <% if(amount) { %>
             <%= amount %>
           <% } %>
         </p>

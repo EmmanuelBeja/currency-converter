@@ -18,14 +18,14 @@ controller.convert = (req, res) => {
     let url = 'https://free.currencyconverterapi.com/api/v5/convert?q='
               + query + '&compact=ultra';
 
-    https.get(url, function(res){
+    https.get(url, (res) => {
         let body = '';
 
-        res.on('data', function(chunk){
+        res.on('data', (chunk) => {
             body += chunk;
         });
 
-        res.on('end', function(){
+        res.on('end', () => {
             try {
               let jsonObj = JSON.parse(body);
 
@@ -43,7 +43,7 @@ controller.convert = (req, res) => {
               cb(e);
             }
         });
-    }).on('error', function(e){
+    }).on('error', (e) => {
           console.log("Got an error: ", e);
           cb(e);
     });
@@ -52,8 +52,8 @@ controller.convert = (req, res) => {
   let quantity = req.body.amount;
   let fromCurrency = req.body.fromCurrency;
   let toCurrency = req.body.toCurrency;
-  convertCurrency(quantity, fromCurrency, toCurrency, function(err, amount) {
-    console.log(amount);
+  convertCurrency(quantity, fromCurrency, toCurrency, (err, amount) => {
+    console.log(quantity+""+fromCurrency+" equals "+amount+""+toCurrency);
     //res.json({
     //    status: "Success",
     //    amount: amount

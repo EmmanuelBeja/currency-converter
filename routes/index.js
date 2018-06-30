@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
   controller.index(req,res);
 })
 
-app.post('/convert', function(req,res){
+app.post('/convert', (req,res) => {
   console.log('converting...');
   controller.convert(req,res);
 });
