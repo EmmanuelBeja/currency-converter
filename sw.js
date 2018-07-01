@@ -5,14 +5,14 @@ let cacheName = 'currencyConverter-v1';
 let cacheFiles = [
   './',
   './index.html',
-  '/js/main.js',
-  '/js/bootstrap.min.js',
-  '/js/jquery-3.3.1.slim.min.js',
-  '/js/popper.min.js',
-  '/css/bootstrap.min.css',
-  '/css/fontawesome-free-5.1.0-web/css/all.css',
-  '/css/fontawesome-free-5.1.0-web/webfonts/fa-solid-900.ttf',
-  '/css/fontawesome-free-5.1.0-web/webfonts/fa-solid-900.woff'
+  './js/main.js',
+  './js/bootstrap.min.js',
+  './js/jquery-3.3.1.slim.min.js',
+  './js/popper.min.js',
+  './css/bootstrap.min.css',
+  './css/fontawesome-free-5.1.0-web/css/all.css',
+  './css/fontawesome-free-5.1.0-web/webfonts/fa-solid-900.ttf',
+  './css/fontawesome-free-5.1.0-web/webfonts/fa-solid-900.woff'
 ]
 
 self.addEventListener('install', (event) => {
