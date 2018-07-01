@@ -1,5 +1,5 @@
 
-let cacheName = 'currencyConverter-static-v2';
+let cacheName = 'currencyConverter-v1';
 
 // Default files to always cache
 let cacheFiles = [
@@ -38,7 +38,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.filter((cacheName) => {
-          return cacheName.startsWith('currencyConverter-static-') &&
+          return cacheName.startsWith('currencyConverter-') &&
                  !cacheFiles.includes(cacheName);
         }).map((cacheName) => {
           // Delete that cached file
