@@ -38,7 +38,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.filter((cacheName) => {
-          return cacheName.startsWith('currency-converter-static-') &&
+          return cacheName.startsWith('currencyConverter-static-') &&
                  !cacheFiles.includes(cacheName);
         }).map((cacheName) => {
           // Delete that cached file
