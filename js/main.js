@@ -2,7 +2,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')
   .then((registration) => {
     console.log('Registration successful, scope is:', registration.scope);
-
+    /*
     registration.addEventListener("updatefound", function(){//listen for updates
       var worker = registration.installing//get the updated service worker
       registration.installing.addEventListener("statechange", function(e){//listen for state change of the update
@@ -11,6 +11,7 @@ if ('serviceWorker' in navigator) {
         }
       })
     })
+    */
 
   })
   .catch((error) => {
