@@ -1,5 +1,5 @@
 
-let cacheName = 'currencyConverter-v6';
+let cacheName = 'currencyConverter-v7';
 
 // Default files to always cache
 let cacheFiles = [
