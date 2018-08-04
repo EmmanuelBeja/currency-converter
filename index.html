@@ -374,7 +374,7 @@
             console.log('Service worker registration failed, error:', error);
           });
 
-          navigator.serviceWorker..addEventListener("updatefound", function(){//listen for updates
+          navigator.serviceWorker.addEventListener("updatefound", function(){//listen for updates
             console.log('update found');
             var worker = registration.installing//get the updated service worker
             registration.installing.addEventListener("statechange", function(e){//listen for state change of the update
