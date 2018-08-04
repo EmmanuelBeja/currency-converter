@@ -17,7 +17,8 @@ if ('serviceWorker' in navigator) {
     console.log('Service worker registration failed, error:', error);
   });
 }
-
+/*
 navigator.serviceWorker.addEventListener("contollerchange", function(){
   window.location.reload();
 })
+*/
