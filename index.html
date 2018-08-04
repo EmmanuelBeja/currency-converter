@@ -380,6 +380,7 @@
             registration.installing.addEventListener("statechange", function(e){//listen for state change of the update
               if (worker.state == "installed") {//if state becomes installed
                 worker.postMessage({action: "update"});//use postMessage API
+                self.skipWaiting();
               }
             })
           })
